@@ -2,6 +2,7 @@
     <x-slot:heading>
         Jobs Page
     </x-slot:heading>
+    <title>Jobs</title>
     <h1>Welcome to Jobs page!</h1>
     
     <h2>Jobs list:</h2>
