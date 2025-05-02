@@ -4,12 +4,22 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
+use App\Models\Job;
 
 Route::get('/', function () {
     return view('home', [
         "greeting" => "Hello", // $greeting 
         "name" =>  "John Doe"
     ]);
+});
+
+Route::get('/test', function () {
+    $job = Job::first();
+
+    TranslateJob::dispatch($job);
+
+    return "Done";
 });
 
 /*
